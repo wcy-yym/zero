@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>EchartTest</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script src="js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+<style>
+	*{
+		margin :0;
+		padding: 0;
+	}
+	.container{
+		margin:25px 0;
+		width: 100%;
+	}
+	.center{
+		margin:0 auto;
+		width: 100%;
+	}
+</style>
+</head>
+<body>
+    <div class="container">
+    	
+    	<div id="chartone" style="width: 1000px;height: 550px;background-color: rgba(200,10,66,0.7);" class="center">
+    	</div>
+    	<div id="charttwo" style="width: 1000px;height: 550px;background-color: rgba(60,60,96,0.7);" class="center">
+    	</div>
+
+</body>
+<script>
+
+
+//ajax获取数据
+	$(document).ready(function() {
+		$.ajax({
+			url: "data/data1.json",
+			dataType: "json",
+			type: "POST",
+			success:function(data){
+				console.log('success');
+				console.log(data);
+				// var Data = JSON.parse(data);
+				var Data = data;
+				// console.log(Data.constructor === Array );
+				// console.log(Data);
+				eone(Data);
+				charttwo(Data);
+			},
+			error:function(){
+				console.log('error');
+			}
+		});
+	});
+
+	//数据处理函数
+	function eone(n){
+		// console.log(n);
+		let eone = n;
+		let level = [];
+		for (var i=0; i<eone.class.length; i++) {
+		 	// statement
+		 	level.push({value:eone.class[i].classnumber,name:eone.class[i].classname});
+			// console.log(level);
+		 } 
+        console.log('eone')
+		
+
+		// console.log(n);
+		 chartone(level);
+		 
+		
+
+	}
+
+	//饼图
+	function chartone(level){
+	var myChart = echarts.init(document.getElementById('chartone'));
+        // 指定图表的配置项和数据
+    var option = {
+    backgroundColor: '#2c343c',
+
+    title: {
+        text: '学生人数',
+        left: 'center',
+        top: 20,
+        textStyle: {
+            color: '#6cf'
+        }
+    },
+
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c} <br/>({d}%)"
+    },
+
+    visualMap: {
+        show: true,
+        min: 80,
+        max: 600,
+        inRange: {
+            colorLightness: [0, 0.8]
+        }
+    },
+    series : [
+        {
+            name:'人数',
+            type:'pie',
+            radius : '75%',
+            center: ['50%', '50%'],
+            data:
+                level,
+            roseType: 'radius',
+            label: {
+                normal: {
+                	formatter: '{b}:{c}',
+                    textStyle: {
+                        color: 'rgba(255, 12, 5, 0.7)'
+                    }
+                }
+            },
+            labelLine: {
+                normal: {
+                    lineStyle: {
+                        color: 'rgba(255, 255, 255, 0.3)'
+                    },
+                    smooth: 0.2,
+                    length: 10,
+                    length2: 20
+                }
+            },
+            itemStyle: {
+                normal: {
+                    color: '#66ccff',
+                    shadowBlur: 200,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            },
+
+            animationType: 'scale',
+            animationEasing: 'elasticOut',
+            animationDelay: function (idx) {
+                return Math.random() * 200;
+            }
+        }
+    ]
+};
+	//echarts图表点击跳转
+		myChart.on('click', function (param){
+		var name = param.name;
+		var a = level;
+		console.log("a:"+a);
+		if(name == ''){
+		// window.location.href="http://www.baidu.com";
+		window.open("http://www.baidu.com");
+		}else{
+		window.open("http://www.bilibili.com");
+		}
+		});
+
+		myChart.on('click',"");
+
+	// 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+
+}
+
+
+	//折柱混合图
+	function charttwo(n){
+	var myChart = echarts.init(document.getElementById('charttwo'));
+	console.log(n.number[3]["firstlevelmc"]);
+
+	let boyName = n.name[0].boy;
+	let girlName = n.name[0].girl;
+	let level = [];
+    let boyNum = [];
+    let girlNum = [];
+	for (var i in n.number[3]) {
+		// console.log(i);
+		level.push(n.number[3][i]);
+		// statement
+	}
+    for(var i in n.sexnumber){
+        boyNum.push(n.sexnumber[i].boy,);
+    }
+    for(var i in n.sexnumber){
+        girlNum.push(n.sexnumber[i].girl,);
+    }
+    // console.log(boyNum);
+	
+
+	var option = {
+	    tooltip: {
+	        trigger: 'axis',
+	        axisPointer: {
+	            type: 'cross',
+	            crossStyle: {
+	                color: '#999'
+	            }
+	        }
+	    },
+    toolbox: {
+        feature: {
+            dataView: {show: true, readOnly: false},
+            magicType: {show: true, type: ['line', 'bar']},
+            restore: {show: true},
+            saveAsImage: {show: true}
+        }
+    },
+    legend: {
+        data:[n.name[0].boy,n.name[0].girl]
+    },
+    xAxis: [
+        {
+            type: 'category',
+            data: level,
+            axisPointer: {
+                type: 'shadow'
+            }
+        }
+    ],
+    yAxis: [
+        {
+            type: 'value',
+            name: n.name[0].stumc,
+            min: 0,
+            max: 400,
+            interval: 50,
+            axisLabel: {
+                formatter: '{value}'
+            }
+        }
+    ],
+    series: [
+        {
+            name:n.name[0].boy,
+            type:'bar',
+            data:boyNum
+        },
+        {
+            name:n.name[0].girl,
+            type:'bar',
+            data:girlNum
+        }
+    ]
+};
+
+//echarts图表点击跳转
+        myChart.on('click', function (param){
+        console.log(param);
+        var sexname = param.seriesName;
+
+        console.log(sexname);
+        if(sexname == n.name[0].boy){
+        // window.location.href="http://www.baidu.com";
+        // window.open("http://www.baidu.com");
+        console.log("baidu")
+        }else{
+        // window.open("http://www.bilibili.com");
+        console.log("bilibili")
+        }
+        });
+        
+        myChart.on('click',"");
+// 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+	}
+
+
+
+</script>
+</html>
