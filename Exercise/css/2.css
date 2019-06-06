@@ -1,0 +1,112 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2018-12-24 15:43:57
+ * @version $Id$
+ */
+.imgBox2{
+	float: left;
+	margin:10px;
+	padding:0;
+	/*background-color: #66ccff66;*/
+	height: 143px;
+	width: 230px;
+	/*border:2px solid #fff;*/
+	border-radius: 20px;
+}
+.imgBox2 img{
+	width: 100%;
+	height: 114px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+.imgBox2-text{
+	color: #fff;
+	margin:0;
+	padding-top: 2px;
+	background-color: #0874E0;
+	width: 100%;
+	height: 28px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	margin-top: -5px;
+}
+.imgBox2-text p{
+	margin:0;
+}
+.showBox{
+		border: 2px solid #f00;
+		color: #66ccff;
+}
+.selectBox{
+		margin:7px;
+}
+#testBody2-first{
+	margin:0 auto;
+	width: 500px;
+	height: 200px;
+	background: rgba(160,60,60,0.3);
+}
+#testBody2-first div:first-child{
+	background:rgb(0,30,160);
+}
+#demo01{
+	position: relative;
+	margin:40px auto;
+	width: 400px;
+	height: 400px;
+	overflow-y: scroll;
+}
+.demo01-topBar{
+	position: fixed;
+	top:0;
+	left: 0;
+	width: 400px;
+	height: 30px;
+	background: #8EDEDCFF;
+}
+#box2{
+	/*background-color: #FF0000;*/
+}
+#outBox .blueBox{
+	background-color: #66ccff;
+}
+.boxTwo{
+	background-color: #FFFF00;
+}
+.bigBox .boxTwo{
+	background-color: #00FF00;
+}
+.blueBox{
+	background-color: #0022DD;
+}
+.pinkBox{
+	background-color: #FCC6DC;
+}
+#testClass{
+	color: #EEDE2FFF;
+}
+
+#testClass:hover{
+	color: #ff0000;
+}
+#testClass:active{
+	color: #0000ff;
+}
+#demo01::-webkit-scrollbar{
+	width: 2px;
+	height: 2px;
+}
+#demo01::-webkit-scrollbar-thumb{
+	background:#eeee00;
+	border-radius: 10px;
+
+}
+#demo01::-webkit-scrollbar-track{
+	background:#27D7D1FF;
+	border-radius: 10px;
+}
+.sBox-li-ul{
+	display: none;
+}

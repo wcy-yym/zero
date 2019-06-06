@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>vue</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<script src="javascript/vue.min.js"></script>
+
+<link href="" rel="stylesheet">
+<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	body{
+		margin:0;
+		padding:0;
+	}
+	hr{
+		/*color:#66ccff;*/
+		/*background-color: #66CCFF;*/
+		border-color: #66CCFF;
+	}
+	.app3-box1{
+		width: 200px;
+		height: 200px;
+		background: url(images/flower/4.png);
+		background-size: contain;
+		background-repeat: no-repeat;
+		opacity: 0.75;
+		
+	}
+	#content{
+		width: 100%;
+		height: 100%;
+		background: url(images/flower/15.png);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+	}
+</style>
+</head>
+<body>
+<div id="content">	
+    <div id="app">
+    	{{msg}}
+    	<div v-html="hello"></div>
+		<input v-model="numIn">
+		<div>{{numIn}}</div>
+    </div>
+	<div id="app2">
+		<div v-html="hr"></div>
+		<!-- <div class="publicItem" v-html="hr"></div> -->
+		{{msg}} <br>
+		{{test}}
+		<div v-if="date == '星期一'">
+			Monday
+		</div>
+		<div v-else-if = "date == '星期二'">
+			Tuseday
+		</div>
+		<div v-else-if="date == '星期三'">
+			Wednesday
+		</div> 
+		<div v-else-if="date == '星期四'">
+			Thursday
+		</div>
+		<div v-else-if="date == '星期五'">
+			Friday
+		</div>
+		<div v-else-if="date == '星期六'">
+			Saturday
+		</div>
+		<div v-else-if = "date == '星期日'">
+			Sunday
+		</div>
+		<div v-else>
+			no day
+		</div>
+
+		<ol><li v-for="abc in site_abc">
+			{{abc}}
+		</li>
+		</ol>
+	</div>
+	<hr>
+	<div id="app3">
+		<div v-bind:class="{'app3-box1' : box1}">
+			
+		</div>
+		<div v-html="haha"></div>
+		<div>hahaha</div>
+	</div>
+	<div id="app4">
+		<table>
+			<thead>
+				小购物车
+				<tr>
+					<th>序号</th>
+					<th>名称</th>
+					<th>价格(单价)</th>
+					<th>数量</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr v-for="item in game">
+					<td>{{item.id}}</td>
+					<td>{{item.name}}</td>
+					<td>{{item.price}}</td>
+					<td>
+						<button v-bind:disabled="item.count == 0" v-on:click="item.count -= 1">-</button>
+						{{item.count}}
+						<button v-on:click="item.count += 1">+</button>
+					</td>
+					<td>
+						<button v-on:click="item.count = 0">reset</button>
+					</td>
+				</tr>
+			<span>总价格：{{totalPrice()}}</span>
+			</tbody>
+		</table>
+	</div>
+	<div id="app5">
+		<hr-div></hr-div>
+		<button v-on:keyup.72="hClick();">{{hclick}}</button><br>
+		<span>{{funnydate}}</span>
+		<div>
+			<input type="checkbox" id="app5-mon" value="Monday" v-model="funnydate">
+			<label for="app5-mon">Monday</label>
+			<input type="checkbox" id="app5-tue" value="Tuseday" v-model="funnydate">
+			<label for="app5-tue">Tuseday</label>
+			<input type="checkbox" id="app5-web" value="Wednesday" v-model="funnydate">
+			<label for="app5-web">Wednesday</label>
+			
+			<div>
+				<select name="fruitPick" id="fruitPick" v-model="fruitPick">
+					<option value="">fruit</option>
+					<option value="apple">苹果</option>
+					<option value="bannana">香蕉</option>
+					<option value="melon">瓜</option>
+				</select>
+				<select name="datePick" id="" v-model="datePick">
+					<option v-for="d in dateList" v-bind:value='d.value'>{{d.key}}</option>
+				</select>
+				<p>{{datePick}}</p>
+			</div>
+			
+			<div>
+				<span>选择了{{fruitPick}}</span>
+			</div>
+		</div>
+
+	</div>
+	<div id="app6">
+		<p>{{apple}}</p>
+		<my-box></my-box>
+		<runoob></runoob>
+		<father></father>
+		<get-name></get-name>	
+		<change-pic></change-pic>
+		<div>
+			<img :src="'images/flower/'+ picNum +'.png'" alt="" height="320px" width="500px" v-change='666'>
+			<button v-on:click="picNum=Math.floor(Math.random()*50)+1" v-focus v-alert>Random</button>
+			<button id="cPic" >change</button>
+			<input value="">
+		</div>
+	</div>
+
+</div>
+</body>
+<script src="javascript/9.js" type="text/javascript"></script>
+
+<script>
+
+</script>
+</html>

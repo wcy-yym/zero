@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>4</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	table th,table tr,table tr td{
+		border :1px solid #6cf;
+
+	}
+	table{
+		
+		margin: 0 auto;
+		
+		text-align: center;
+	}
+	table th {
+		height: 70px;
+		margin-top:0px;
+		/*border:2px solid #6cf;*/
+		background-color: #ccc;
+
+	}
+	table tr {
+		
+
+	}
+	table tr td{
+		width: 100px;
+		height: 100px;
+
+
+
+	}
+	#tablebox{
+		height: 700px;
+		overflow: auto;
+		background: #ccc;
+  		margin: 20px 10px;
+ 		box-shadow: 0 0 1px 3px #ddd;
+	}
+	#mytable{
+	
+		/*width: 100%;*/
+		/*margin-top: 60px;*/
+	}
+	#tabhead{
+		width: 100%;
+		background-color: #ddd;
+
+	}
+</style>
+<script src="javascript/jquery-3.3.1.js"></script>
+<script>
+	$(document).ready(function() {
+
+		$('.text').text('123');
+		var tablebox = document.querySelector('#tablebox');
+
+		function scrollHandle (e){
+    	var scrollTop = this.scrollTop;
+    	console.log(scrollTop);
+    	var scro2 = scrollTop-5;
+    	this.querySelector('thead').style.transform = 'translateY(' + scro2 + 'px)';
+    	console.log('a');
+  }
+		tablebox.addEventListener('scroll',scrollHandle)
+	});
+
+</script>
+
+
+</head>
+
+<body>
+	<div id="tablebox">
+    <table id="mytable">
+
+    	 <col width="105" />
+            <col width="105" />
+            <col width="70" />
+            <col width="70" />
+            <col width="70" />
+            <col width="80" />
+            <col width="80" />
+            <col width="80" />
+    	<thead id="tabhead">
+    	<tr>
+    		<th colspan="6" style="margin:0 auto;"><p>hello</p></th>
+    	</tr>
+    	<tr>
+    		<th>A</th>
+    		<th>B</th>
+    		<th>C</th>
+    		<th>D</th>
+    		<th>E</th>
+    		<th>F</th>
+    	</tr>
+    	</thead>
+    	<tbody>
+		<tr>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+		</tr>
+		<tr>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+		</tr>
+		<tr>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+		</tr>
+		<tr>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+		</tr>
+		<tr>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+		</tr>
+		<tr>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+		</tr>
+		<tr>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+		</tr>
+		<tr>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+		</tr>
+		<tr>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+		</tr>
+		<tr>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+		</tr>
+		<tr>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+		</tr>
+		<tr>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+		</tr>
+		<tr>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+		</tr>
+		<tr>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+		</tr>
+		<tr>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+		</tr>
+		<tr>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+		</tr>
+		<tr>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+		</tr>
+		<tr>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+		</tr>
+		<tr>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+		</tr>
+		<tr>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+		</tr>
+		<tr>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+		</tr>
+		<tr>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+		</tr>
+		<tr>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+		</tr>
+		<tr>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+		</tr>
+		<tr>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+		</tr>
+		<tr>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+		</tr>
+		<tr>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+		</tr>
+		<tr>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+		</tr>
+		<tr>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+		</tr>
+		<tr>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+			<td><span class="text"></span></td>
+		</tr>
+		</tbody>
+    </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sum</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
+	<meta content="favicon.ico" itemprop="image">
+	<meta name="referrer" content="always">
+	<script src="javascript/jquery-3.3.1.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/2.css">
+	<style>
+	body{
+		/*margin: 0 auto;*/
+		text-align: center;
+		/*background-image: url(images/pattern/2.png);*/
+		
+	}
+	table{
+		margin: 30px auto;
+		width: 400px;
+		text-align: center;
+		border-spacing:0;
+	}
+	td{
+			width: 25%;
+		}
+	ul{
+		list-style-type: none;
+	}
+	div{
+		width: 100%;
+		min-height: 30px;
+	}
+	::-webkit-scrollbar{
+		width: 2px;
+		height: 2px;
+	}
+	::-webkit-scrollbar-thumb{
+		color: #fff;
+		background:#66ccffbb;
+		border-radius: 10px;
+
+	}
+	::-webkit-scrollbar-track{
+		background:#383934;
+		border-radius: 10px;
+
+	}
+	#box{
+		position: relative;
+	}
+	#boxleft{
+		position: absolute;
+		left: 0;
+		top:0;
+		display: block;
+		width:50px;
+		height: 100%;
+		/*background-color: #cc0066;*/
+		cursor:url(images/arrL3.png),auto;
+	}
+	#boxright{
+		position: absolute;
+		right: 0;
+		top:0;
+		display: block;
+		width:50px;
+		height: 100%;
+		/*background-color: #6600cc;*/
+		cursor:url(images/arrR3.png),auto;
+	}
+	#mytb td{
+		border-bottom: 2px solid #666;
+	}
+	#btimg01{
+		width: 500px;
+		height: 500px;
+		background-image: url(images/1.png);
+		background-size: 500px 500px;
+		background-repeat: no-repeat;
+	}
+	.blkBox{
+		background-color: #000;
+	}
+	#tableBox{
+		/*transform:scale(0.8);*/
+	}
+	</style>
+</head>
+<body onload="">
+<script type="text/javascript">
+	 function ggg(){
+	 	// alert("ggg");
+	 	console.log('gggg');
+	 	for(var i=1 ;i < 10; i++){
+	 	if(i<5){
+	 	console.log(i);
+	 	$('#gx').append('<div id='+i+' class=ac>abccv</div>');
+	 }
+	 }
+	 }	
+</script>	
+<script>
+	$(function(){ 
+		console.log("hello");
+		// alert("hello");
+　　　　//adding your code here 
+	var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+                console.log(userAgent);
+                if(userAgent.indexOf("Chrome") == -1) {
+                    //chrome浏览器  
+                   alert("chrome浏览器");
+                } else {
+                }
+　　});  
+</script>
+<div>
+	<button id="log">CONSOLE</button>
+	<input type="text" id="logBtn" value="666" data="lala" style="width: 85px;"><br>
+	<input type="text" value="" name="textNumber" onkeyup="NumberSelect(this);">
+	<input type="hidden" id="cglist" value="[{a=1,b=2,c=3},{X=111,Y=222,Z=333}]">
+</div>
+	<div>
+		<form action="" id="bj" >
+			<input type="hidden" value="通过" id="alertClose">
+			<input type="hidden" value="申请成功" id="">
+			<select id="set" style="max-width:100px;">
+                <option value="" >请选择</option>
+                <option value="" id="a">aaa</option>
+                <option value="" id="b">B</option>
+                <option value="fff">C</option>
+              </select>
+            <input type="submit" value="check">
+		</form>
+	</div>
+	<div>
+		<table id="mytb">
+		<thead>
+			<tr>
+				<td onclick="tableClick();">名字</td>
+				<td>人数</td>
+				<td>天数</td>
+				<td>分数</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>A</td>
+				<td>30/100</td>
+				<td>50/100</td>
+				<td>10</td>
+			</tr>
+			<tr>
+				<td>B</td>
+				<td>50/80</td>
+				<td>20/30</td>
+				<td>50</td>
+			</tr>
+			<tr>
+				<td>C</td>
+				<td>20/40</td>
+				<td>30/50</td>
+				<td>10</td>
+			</tr>
+			<tr>
+				<th id="yj">&nbsp;</th>
+				<td id="yjje">&nbsp;</td>
+				<td id="xh">123</td>
+				<td id="number"></td>
+			</tr>
+			<tr>
+				<th>清除</th>
+				<td id="cleana" class="cl">aaa</td>
+				<td id="cleanb" class="cl">bbb</td>
+				<td id="cleanc" class="cl">ccc</td>
+			</tr>
+			<tr>
+				<th></th>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th></th>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</tbody>
+		<tfoot id="totalRow">
+			<tr>
+				<td>合计</td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</tfoot>
+	</table>
+	</div>
+	<div id="gx">
+		<span ondragstart="return false;">只能输入6位数字</span>
+		<input type="text" id="nbctr" style="width: 100px;" >
+		<input type="submit" value="提交">
+		<span id="xm">hhhh</span>
+		<span id="la">lalala</span>
+		<input type="text" id="nb1" style="width: 200px;">
+		<input type="text" onkeyup="checknum();" id="nc" />
+	</div>
+	<div id="gx">
+		<span>145</span>
+		<input type="text" id="nb145" style="width: 100px;" >
+		<button id="btn145">145</button>
+	</div>	
+<div>
+	<ul>
+		<li><button onclick="ggg()" id="gbtn">ggg</button></li>
+		<li><button id="inputCheck" onclick="check()">inputCheck</button></li>
+		<li><button id="alertCheck">alertCheck</button></li>
+		<li><button id="btn01">01</button></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</div>
+<div id="box" style="margin: 10px auto; width: 600px;height: 400px;background-color: #553322;">
+	<div id="boxleft">a </div>
+	<div id="boxright">b </div>
+</div>
+<div id="outBox" class="bigBox">
+	<div id="box2" class="pinkBox boxTwo blueBox" style="margin:10px auto;width: 300px;height: 300px;">	
+	</div>
+</div>
+<div style="width: 200px;height: 200px;background-color: #66ccff ; cursor:url(images/arrR3.png),auto;">
+</div>
+<div style="margin:0 auto;width:400px;height: 200px;background-color: #66ccff; ">
+	<form action="">
+		<!-- 姓名
+		<input type="text" name="mc" style="width: 100px"><br> -->
+		<select name="number" id="snb">
+			<option value="">aaa</option>
+			<option value="">bbb</option>
+			<option value="">ccc</option>
+			<option value="">ddd</option>
+		</select>
+		<input type="submit" name="tj" value="提交">
+	</form>
+</div>
+<div id="">
+	<input type="text" id="ipnb1" style="width: 150px;" ><br>
+	<input type="number" class="ipnb2" style="width: 150px;" min="0" ><br>
+	<input type="number" class="ipnb2" style="width: 150px;" ><br>
+	<input type="number" class="ipnb2" style="width: 150px;" min="0" ><br>
+	<input type="number" class="ipnb3" id="ipnb3" style="width: 120px;" min="0" max="50" value="20" onkeyup="nb3();">
+</div>
+<div class="blkbox" style="width: 1000px;height: 700px;background-color: #000;color:#c6c">
+	<div >
+		<div style="width: 100px;height: 100px;">
+			<p id="blkbox-p1">123</p>
+		<div>
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<button id="blkbox-btn01">click</button>
+		</div>
+		<div>
+		</div>
+	</div>
+	<div>
+	</div>
+	<button id="btimg01"></button>
+</div>
+	<div>
+	</div>
+	<div style="width: 100%;height: 220px;">
+	<div class="imgBox2">
+		<div><img src="images/flower/2.png" alt=""></div>
+		<div class="imgBox2-text"><p>hello</p></div>
+		<input type="hidden" value="a123" class="boxId">
+	</div>
+	<div class="imgBox2">
+		<div><img src="images/flower/3.png" alt=""></div>
+		<div class="imgBox2-text"><p>hello</p></div>
+		<input type="hidden" value="b123" class="boxId">
+	</div>
+	<div class="imgBox2">
+		<div><img src="images/flower/4.png" alt=""></div>
+		<div class="imgBox2-text"><p>hello</p></div>
+		<input type="hidden" value="c123" class="boxId">
+	</div>
+	<div class="imgBox2">
+		<div><img src="images/flower/5.png" alt=""></div>
+		<input type="hidden" value="d123" class="boxId">
+		<div class="imgBox2-text"><p>hello</p></div>
+	</div>
+	<div class="imgBox2">
+		<div><img src="images/flower/6.png" alt=""></div>
+		<div class="imgBox2-text"><p>hello</p></div>
+		<input type="hidden" value="z888" class="boxId">
+	</div>	
+	<button id="selectImg">批量选择</button>
+	<button id="dlImg">确定</button>
+	<input type="checkbox" id="testCheck" >
+	</div>
+	<div id="testBody1">
+		<button onclick="testBody1();">
+			click
+		</button>
+		<span style="height: 300px;width: 100%;">
+		</span>
+	</div>
+	<div id="testBody2">
+		<div>
+			<span id="testBody2-time"></span>
+			<hr style="height: 5px;background: #888822;">
+		</div>
+		<div id="testBody2-first">
+			<div>xxx</div>
+			<div>lalala</div>
+			<div>dddd</div>
+		</div>
+		<div id="testBody2-first">
+			<div>yyyy</div>
+			<div>ssss</div>
+			<div>ffff</div>
+		</div>
+		<div id="testBody2-first">
+			<div>zzzz</div>
+			<div>ggg</div>
+			<div>adaf</div>
+		</div>
+	</div>
+	<div id="demo01">
+		<div class="demo01-topBar"></div>
+		var settings = {
+  crestHeight: [10, 14, 18],
+  speed: .1
+};
+// 这里是第 ① 处
+// JParticles.utils.extend 等同于 jQuery.extend，你也可以使用 Object.assign 替代。
+var effect = new JParticles.wave('.instance .demo', JParticles.utils.extend({
+  num: 3,
+  lineColor: ['#e53d27', '#42e527', '#27C9E5'],
+  lineWidth: [.7, .9, 1],
+  offsetTop: .65,
+  rippleNum: 2
+}, settings));
+// 线条波动效果
+document.querySelector('.voice').onmousedown = function () {
+  clearInterval(this.timer);
+  this.timer = setInterval(function () {
+    var crestHeight = settings.crestHeight.map(function (item) {
+      // 获取随机波动值
+      item += JParticles.utils.limitRandom(20, -20);
+      // 处理 (0, 1) 之间的值为整数
+      if (item < 1 && item > 0) {
+        item = Math.ceil(item);
+      }
+      return item;
+    });
+    // 这里是第 ② 处
+    // 通过 setOptions() 来控制线条的波动
+    effect.setOptions({
+      crestHeight: crestHeight,
+      speed: [.2, .14, .1]
+    });
+  }, 100);
+  // 复原
+  var self = this;
+  document.onmouseup = function () {
+    document.onmouseup = null;
+    clearInterval(self.timer);
+    effect.setOptions(settings);
+  };
+};
+var settings = {
+  crestHeight: [10, 14, 18],
+  speed: .1
+};
+// 这里是第 ① 处
+// JParticles.utils.extend 等同于 jQuery.extend，你也可以使用 Object.assign 替代。
+var effect = new JParticles.wave('.instance .demo', JParticles.utils.extend({
+  num: 3,
+  lineColor: ['#e53d27', '#42e527', '#27C9E5'],
+  lineWidth: [.7, .9, 1],
+  offsetTop: .65,
+  rippleNum: 2
+}, settings));
+// 线条波动效果
+document.querySelector('.voice').onmousedown = function () {
+  clearInterval(this.timer);
+  this.timer = setInterval(function () {
+    var crestHeight = settings.crestHeight.map(function (item) {
+      // 获取随机波动值
+      item += JParticles.utils.limitRandom(20, -20);
+      // 处理 (0, 1) 之间的值为整数
+      if (item < 1 && item > 0) {
+        item = Math.ceil(item);
+      }
+      return item;
+    });
+    // 这里是第 ② 处
+    // 通过 setOptions() 来控制线条的波动
+    effect.setOptions({
+      crestHeight: crestHeight,
+      speed: [.2, .14, .1]
+    });
+  }, 100);
+  // 复原
+  var self = this;
+  document.onmouseup = function () {
+    document.onmouseup = null;
+    clearInterval(self.timer);
+    effect.setOptions(settings);
+  };
+};
+// 这里是第 ① 处
+// JParticles.utils.extend 等同于 jQuery.extend，你也可以使用 Object.assign 替代。
+var effect = new JParticles.wave('.instance .demo', JParticles.utils.extend({
+  num: 3,
+  lineColor: ['#e53d27', '#42e527', '#27C9E5'],
+  lineWidth: [.7, .9, 1],
+  offsetTop: .65,
+  rippleNum: 2
+}, settings));
+// 线条波动效果
+document.querySelector('.voice').onmousedown = function () {
+  clearInterval(this.timer);
+  this.timer = setInterval(function () {
+    var crestHeight = settings.crestHeight.map(function (item) {
+      // 获取随机波动值
+      item += JParticles.utils.limitRandom(20, -20);
+      // 处理 (0, 1) 之间的值为整数
+      if (item < 1 && item > 0) {
+        item = Math.ceil(item);
+      }
+      return item;
+    });
+    // 这里是第 ② 处
+    // 通过 setOptions() 来控制线条的波动
+    effect.setOptions({
+      crestHeight: crestHeight,
+      speed: [.2, .14, .1]
+    });
+  }, 100);
+  // 复原
+  var self = this;
+  document.onmouseup = function () {
+    document.onmouseup = null;
+    clearInterval(self.timer);
+    effect.setOptions(settings);
+  };
+};
+// 这里是第 ① 处
+// JParticles.utils.extend 等同于 jQuery.extend，你也可以使用 Object.assign 替代。
+var effect = new JParticles.wave('.instance .demo', JParticles.utils.extend({
+  num: 3,
+  lineColor: ['#e53d27', '#42e527', '#27C9E5'],
+  lineWidth: [.7, .9, 1],
+  offsetTop: .65,
+  rippleNum: 2
+}, settings));
+// 线条波动效果
+document.querySelector('.voice').onmousedown = function () {
+  clearInterval(this.timer);
+  this.timer = setInterval(function () {
+    var crestHeight = settings.crestHeight.map(function (item) {
+      // 获取随机波动值
+      item += JParticles.utils.limitRandom(20, -20);
+      // 处理 (0, 1) 之间的值为整数
+      if (item < 1 && item > 0) {
+        item = Math.ceil(item);
+      }
+      return item;
+    });
+    // 这里是第 ② 处
+    // 通过 setOptions() 来控制线条的波动
+    effect.setOptions({
+      crestHeight: crestHeight,
+      speed: [.2, .14, .1]
+    });
+  }, 100);
+  // 复原
+  var self = this;
+  document.onmouseup = function () {
+    document.onmouseup = null;
+    clearInterval(self.timer);
+    effect.setOptions(settings);
+  };
+};
+	</div>
+	<div style="margin:0 auto;width: 200px;height: 200px;overflow:auto;">
+		滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试<br>
+		滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试<br>滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试<br>
+		滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试<br>滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试<br>
+		滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试<br>滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试<br>
+		滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试<br>滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试<br>
+		滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试<br>滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试<br>
+		滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试<br>滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试<br>
+		滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试滚动条测试<br>
+	</div>
+	URL:
+		<input type="text" class="urlInput">
+		<button onclick="replaceOne();">替换</button>
+	<table>
+		<tr>
+			<th>标题</th>
+			<td class="tdtest">内容</td>
+		</tr>
+	</table>
+	<div id="laBox">
+	</div>
+	<div>
+		<textarea name="" id="textArea1" cols="30" rows="30" style="width: 100px;height: 120px;">欢迎</textarea>
+	</div>
+	<input type="text" id="input-reNum">
+	<button id="btn-reNum" onclick="clickReNum();">reNum</button>
+	<div class="choose-demo1">
+		<ul class="choose-select">
+			<li id="chooseA" nbid="123">A</li>
+			<li nbid="112">B</li>
+			<li nbid="321">C</li>
+		</ul>
+		<ul class="choose-select">
+			<li nbid="32">D</li>
+			<li nbid="21">e</li>
+			<li nbid="212">F</li>
+			<li nbid="314">g</li>
+			<li nbid="222">H</li>
+		</ul>
+		<ul class="choose-select">
+			<li nbid="521">I</li>
+			<li nbid="555">J</li>
+		</ul>
+		<button id="chooseGet" onclick="chooseGet();">GET</button>
+	</div>
+	<div id="slBox">
+		<h1>slBox</h1>
+		<div><span><input type="text" class="slslsl" name="slslsl"></span></div>
+		<div><span><input type="text" class="slslsl" name="slslsl"></span></div>
+		<div><span><input type="text" class="slslsl" name="slslsl"></span></div>
+		<div><span><input type="text" class="slslsl" name="slslsl"></span></div>
+		<div><span><input type="text" class="slslsl" name="slslsl"></span></div>
+
+		<button onclick="inputsl();">确认数量</button>
+	</div>
+
+	<div>
+		<div id="BlogDemo01">
+			<b>a</b>
+			<b>b</b>
+			<b>c</b>
+		</div>
+		<input type="text" name="num" id="inputBlog" value="88888">
+
+
+
+
+
+		<button onclick="BlogDemo01Btn();">result</button>
+	</div>
+	<div>
+		<input type="text" id="testididid">
+	</div>
+	<button onclick="scaleBox();">点击缩放</button>
+	<div id="tableBox">
+		<table border="1" style="width: 600px;">
+			<thead>
+				<th>one</th>
+				<th>two</th>
+				<th>three</th>
+				<th>four</th>
+				<th>five</th>
+			</thead>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+			</tr>
+		</table>
+	
+
+	</div>
+	<div>
+		<textarea name="" id="" style="overflow-y: hidden;">
+			adfjadjdajfal;
+		</textarea>
+
+	</div>
+	<div>
+		<button onclick="selectExcept();">click</button>
+		<div class="item1">123</div>
+		<div class="item1" id="ghost">234</div>
+		<div class="item1">345</div>
+		<div class="item1">456</div>
+	</div>
+	<div>
+		<p id="testClass">
+			伪类测试哦哦哦哦哦
+		</p>
+	</div>
+	<div>
+		<form action="" id="myForm">
+			<input type="text" name="mc" value="wcy">
+			<input type="text" name="id" value="999">
+			<input type="button" value="提交" id="" onclick="smClick();">
+		</form>
+	</div>
+	<div style="background: #E9F5E7;width: 100px;height: 100px;">
+		
+	</div>
+	<div id="selectBox2">
+		<ul>
+			<li class="selectBox2-li">
+				<span class="selectBox2-span">一</span>
+				<ul class="sBox-li-ul">
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+				</ul>
+			</li>
+			<li class="selectBox2-li">
+				<span class="selectBox2-span">二</span>
+				<ul class="sBox-li-ul">
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+				</ul>
+			</li>
+			<li class="selectBox2-li">
+				<span class="selectBox2-span">三</span>
+				<ul class="sBox-li-ul">
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+				</ul>
+			</li>
+		</ul>
+		
+		
+		
+	</div>
+	<div>
+		<table>
+			<tr>
+				
+				<td>123
+				<input type="button" onclick="cytj(this)" class="tj" value="444" >
+				<input type="hidden" name="cyid" id="cyid" class="cyid" value="1">
+				</td>
+			</tr>
+			<tr>
+				
+				<td>123
+				<input type="hidden" name="cyid" id="cyid" class="cyid" value="2">
+				<input type="button" onclick="cytj(this)" class="tj" value="444" >
+				</td>
+			</tr>
+			<tr>
+				
+				<td>123
+				<input type="hidden" name="cyid" id="cyid" class="cyid" value="3">
+				<input type="button" onclick="cytj(this)" class="tj" value="444" >
+				</td>
+			</tr>
+			<tr>
+				<input type="hidden" name="cyid" id="cyid" class="cyid" value="4">
+				<td>123
+				<input type="button" onclick="cytj(this);" value="444" >
+				</td>
+			</tr>
+			<tr>
+				<input type="hidden" name="cyid" id="cyid" class="cyid" value="5">
+				<td>123
+				<input type="button" onclick="cytj(this);" value="444" >
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div>
+		<button onclick="window.open('images/1.png')">跳转哦</button>
+	</div>
+	<div id="slBoxOne">
+		<ul>
+			<li><a href=""> 123 </a><input type="hidden" class="slMax" name="slMax" value="10"> <input type="text" name="slCg" class="slCg" value=""></li>
+			<li>2312 <input type="hidden" class="slMax" name="slMax" value="33"> <input type="text" name="slCg" class="slCg" value=""></li>
+			<li>123 <input type="hidden" class="slMax" name="slMax" value="123"> <input type="text" name="slCg" class="slCg" value=""></li>
+			<li>123</li>
+		</ul>
+	</div>
+	<div id="boxThree">
+		
+	</div>
+<footer>
+	<p>①</p>
+	<p>②</p>
+	<p>③</p>
+	<p>④</p>
+	<p>⑤</p>
+</footer>
+</body>
+	<script src="javascript/2.js"></script>
+</html>
