@@ -475,26 +475,84 @@ $("#log").click(function(){
 		console.log(arrSet);
 
 	}
-	es6DemoOne();
+	// es6DemoOne();
 	function copyDemo(){
 		console.log('CopyCopyCopyCopyCopyCopy');
 		let arrA = [0, 1, 2, 3, 4, 5];
-		let arrB = arrA ;
+		let arrB = [];
+		arrB = arrA ;
+		
 		let a = 11;
 		let b = a;
 		a = 22;
 		arrB[0] = 99;
 		arrB[1] = 3;
-		console.log(arrA,arrB);
+
+		console.log(arrA, arrB);
 		console.log(b);
+		var arrC = deepClone(arrA);
+		console.log('c');
+		arrC[0] = 88;
+		console.log(arrA, arrC);
 	}
-	copyDemo();
+	function deepClone(obj){
+    let objClone = Array.isArray(obj)?[]:{};
+    console.log('%%%%%%%%%%');
+    console.log(typeof (obj));
+    if(obj && typeof obj==="object"){
+    	console.log(obj);
+        for(key in obj){
+            if(obj.hasOwnProperty(key)){
+                //判断ojb子元素是否为对象，如果是，递归复制
+                
+                if(obj[key]&&typeof obj[key] ==="object"){
+                	console.log('obj hasOwnProperty');
+                    objClone[key] = deepClone(obj[key]);
+                }else{
+                    //如果不是，简单复制
+                    console.log('Not hasOwnProperty');
+                    objClone[key] = obj[key];
+                }
+            }
+        }
+    }
+    return objClone;
+} 
+	// copyDemo();
 	function testTwo(){
+		var a = {};
+		a.ll = "name";
+		a.bb = "boy"
 		let log = document.getElementById("logBtn");
-		let flag = log.hasOwnProperty('data');
+		let flag = a.hasOwnProperty("bb");
+		console.log(a);
 		console.log(flag);
 	}
-	testTwo();
+
+	// testTwo();
+	function testThree(){
+		let apple = {
+			name : "苹果",
+			price : 20,
+			color : "red"
+		}
+		let handler = {
+			get : function(target, key){
+				console.log('getting' + key);
+				return target[key];
+			},
+			set : function(target, key, value){
+				console.log('setting' + key + value);
+				target[key] = value;
+			}
+		}
+		let proxyDemo = new Proxy(apple, handler);
+		console.log('proxyxyxy');
+		console.log(proxyDemo);
+		proxyDemo.price = 88;
+		console.log(proxyDemo.price);
+	}
+	testThree();
 
 });
 //调试结束
@@ -587,19 +645,18 @@ function slCheck(){
 	var sl = document.getElementsByClassName('slCg');
 	console.log('slVVVVVVVV');
 	console.log(sl);
-	// for (var i=0;i < sl.length; i++) {
-	// 	// statement
-	// 	console.log(i);
-	// 	sl[i].addEventListener('keyup', function(){
-	// 	console.log('keyup');
-	// 	var a = parseInt($(this).val());
-	// 	var b = parseInt($(this).siblings('.slMax').val());
-	// 	console.log(a + "and" + b);
-	// 	if (a > b) {
-	// 		console.log("数量超出");
-	// 	}
-	// 	});
-	// }
+	for (var i=0;i < sl.length; i++) {
+		console.log(i);
+		sl[i].addEventListener('keyup', function(){
+		console.log('keyup');
+		var a = parseInt($(this).val());
+		var b = parseInt($(this).siblings('.slMax').val());
+		console.log(a + "and" + b);
+		if (a > b) {
+			console.log("数量超出");
+		}
+		});
+	}
 	$(".slCg").each(function(index, el) {
 			console.log(index);
 			console.log(el);
