@@ -15,7 +15,6 @@
 		/*margin: 0 auto;*/
 		text-align: center;
 		/*background-image: url(images/pattern/2.png);*/
-		
 	}
 	table{
 		margin: 30px auto;
@@ -34,19 +33,17 @@
 		min-height: 30px;
 	}
 	::-webkit-scrollbar{
-		width: 2px;
+		width: 5px;
 		height: 2px;
 	}
 	::-webkit-scrollbar-thumb{
 		color: #fff;
 		background:#66ccffbb;
 		border-radius: 10px;
-
 	}
 	::-webkit-scrollbar-track{
 		background:#383934;
 		border-radius: 10px;
-
 	}
 	#box{
 		position: relative;
@@ -88,6 +85,7 @@
 		/*transform:scale(0.8);*/
 	}
 	</style>
+	<script src="./components/two.js" type="module"></script>
 </head>
 <body onload="">
 <script type="text/javascript">
@@ -95,11 +93,11 @@
 	 	// alert("ggg");
 	 	console.log('gggg');
 	 	for(var i=1 ;i < 10; i++){
-	 	if(i<5){
-	 	console.log(i);
-	 	$('#gx').append('<div id='+i+' class=ac>abccv</div>');
-	 }
-	 }
+		 	if(i<5){
+		 	console.log(i);
+		 	$('#gx').append('<div id='+i+' class=ac>abccv</div>');
+			}
+	 	}
 	 }	
 </script>	
 <script>
@@ -111,16 +109,24 @@
                 console.log(userAgent);
                 if(userAgent.indexOf("Chrome") == -1) {
                     //chrome浏览器  
-                   alert("chrome浏览器");
+                   alert("IE");
                 } else {
+
                 }
 　　});  
 </script>
 <div>
-	<button id="log">CONSOLE</button>
+
+	<button id="log">CONSOLE</button><br>
+	
 	<input type="text" id="logBtn" value="666" data="lala" style="width: 85px;"><br>
-	<input type="text" value="" name="textNumber" onkeyup="NumberSelect(this);">
+	<input type="text" value="" class="textNum" name="textNumber" onkeyup="NumberSelect(this);"><br>
 	<input type="hidden" id="cglist" value="[{a=1,b=2,c=3},{X=111,Y=222,Z=333}]">
+	<input style="width: 100px;" id="mobile" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" maxlength=11></input> <br>
+
+<!--[if lt IE 7]>       <p>小于IE7</p> <![endif]-->
+<!--[if IE 7]>       <p>IE7</p> <![endif]-->
+<!--[if gt IE 7]>       <p>大于IE7</p> <![endif]-->
 </div>
 	<div>
 		<form action="" id="bj" >
@@ -547,10 +553,8 @@ document.querySelector('.voice').onmousedown = function () {
 		<div><span><input type="text" class="slslsl" name="slslsl"></span></div>
 		<div><span><input type="text" class="slslsl" name="slslsl"></span></div>
 		<div><span><input type="text" class="slslsl" name="slslsl"></span></div>
-
 		<button onclick="inputsl();">确认数量</button>
 	</div>
-
 	<div>
 		<div id="BlogDemo01">
 			<b>a</b>
@@ -558,11 +562,6 @@ document.querySelector('.voice').onmousedown = function () {
 			<b>c</b>
 		</div>
 		<input type="text" name="num" id="inputBlog" value="88888">
-
-
-
-
-
 		<button onclick="BlogDemo01Btn();">result</button>
 	</div>
 	<div>
@@ -614,14 +613,11 @@ document.querySelector('.voice').onmousedown = function () {
 				<td>5</td>
 			</tr>
 		</table>
-	
-
 	</div>
 	<div>
 		<textarea name="" id="" style="overflow-y: hidden;">
 			adfjadjdajfal;
 		</textarea>
-
 	</div>
 	<div>
 		<button onclick="selectExcept();">click</button>
@@ -643,7 +639,6 @@ document.querySelector('.voice').onmousedown = function () {
 		</form>
 	</div>
 	<div style="background: #E9F5E7;width: 100px;height: 100px;">
-		
 	</div>
 	<div id="selectBox2">
 		<ul>
@@ -678,28 +673,22 @@ document.querySelector('.voice').onmousedown = function () {
 				</ul>
 			</li>
 		</ul>
-		
-		
-		
 	</div>
 	<div>
 		<table>
 			<tr>
-				
 				<td>123
 				<input type="button" onclick="cytj(this)" class="tj" value="444" >
 				<input type="hidden" name="cyid" id="cyid" class="cyid" value="1">
 				</td>
 			</tr>
 			<tr>
-				
 				<td>123
 				<input type="hidden" name="cyid" id="cyid" class="cyid" value="2">
 				<input type="button" onclick="cytj(this)" class="tj" value="444" >
 				</td>
 			</tr>
 			<tr>
-				
 				<td>123
 				<input type="hidden" name="cyid" id="cyid" class="cyid" value="3">
 				<input type="button" onclick="cytj(this)" class="tj" value="444" >
@@ -731,8 +720,40 @@ document.querySelector('.voice').onmousedown = function () {
 		</ul>
 	</div>
 	<div id="boxThree">
+		<div>
+			<ul>
+				<li class="xxx">123</li>
+				<li class="xxx yyy">123</li>
+				<li class="xxx zzz">123</li>
+				<li>123</li>
+				<li>123</li>
+			</ul>
+		</div>
+	</div>
+	<div id="boxFour">
+		<input type="button" value="click" onclick="boxFourClick();">
+		<select name="boxFour-selectFruit" id="boxFour-selectFruit">
+			<option value="1">苹果</option>
+			<option value="2">香蕉</option>
+			<option value="3">雪梨</option>
+		</select>
+	</div>
+	<div id="boxFive">
+		<input type="button" onclick="importClick()" value="点一点">
 		
 	</div>
+	<div id="boxSix">
+		<ul>
+			<input type="checkbox" class="sixFatherBox">
+			<span>班级</span>
+			<ul class="sixSonSelect">
+				li.
+			</ul>
+		</ul>
+		
+	</div>
+
+
 <footer>
 	<p>①</p>
 	<p>②</p>
@@ -742,4 +763,5 @@ document.querySelector('.voice').onmousedown = function () {
 </footer>
 </body>
 	<script src="javascript/2.js"></script>
+	
 </html>
