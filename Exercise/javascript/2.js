@@ -1,8 +1,8 @@
 /**
  * 
- * @authors Your Name (you@example.org)
+ * @authors YYM
  * @date    2018-10-29 14:01:51
- * @version $Id$
+ * @version $0.1$
  */
 	var sum = new Array(+$('#mytb thead tr td:not(:first-child)').length).fill(0);
 	console.log(sum);
@@ -317,7 +317,6 @@ function chooseGet(){
 function scaleBox(){
 	$("#tableBox").css('transform', 'scale(0.5)');
 }
-
 // 调试
 $("#log").click(function(){
 	console.log('test');
@@ -352,9 +351,10 @@ $("#log").click(function(){
 	// objtest();
 	function clearSpace(){
 		console.log('去除前后空格');
-		var name = " a b c ";
+		var name = "    a b c     ";
 		var name2 = name.replace(/^\s+|\s+$/g,"");//去除前后空格
-		console.log(name2);
+		var name3 = name.replace(/\s+/g,'');//去除所有空格
+		console.log(name3);
 	}
 	// clearSpace();
 	function numberSort(){
@@ -399,12 +399,16 @@ $("#log").click(function(){
 		var reg =  /^.*[~!@#\$%\^&\*\(\)_+\-\[\]\{\}\\\|\'\";:,\<\.\>\/\?\s+].*$/;
 		var a1 = '123';
 		console.log('testReg');
-		console.log(reg.test(a1));
+		// console.log(reg.test(a1));
 		if (reg.test(a1) == false) {
 			 // alert("error");
-		} 
+		}
+		var reg1 = /\[.*\]/g;
+		var newReg1 = a.replace(reg1,'')
+		console.log('>>>>>>>>>>');
+		console.log(newReg1);
 	}
-	// regTest();
+	regTest();
 	//正则判断6~10位 英文和数字
 	function zzzz(){
 		var reg = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,10}$/
@@ -473,7 +477,6 @@ $("#log").click(function(){
 		console.log(setArr);
 		let arrSet = [...setArr];
 		console.log(arrSet);
-
 	}
 	// es6DemoOne();
 	function copyDemo(){
@@ -481,13 +484,11 @@ $("#log").click(function(){
 		let arrA = [0, 1, 2, 3, 4, 5];
 		let arrB = [];
 		arrB = arrA ;
-		
 		let a = 11;
 		let b = a;
 		a = 22;
 		arrB[0] = 99;
 		arrB[1] = 3;
-
 		console.log(arrA, arrB);
 		console.log(b);
 		var arrC = deepClone(arrA);
@@ -504,7 +505,6 @@ $("#log").click(function(){
         for(key in obj){
             if(obj.hasOwnProperty(key)){
                 //判断ojb子元素是否为对象，如果是，递归复制
-                
                 if(obj[key]&&typeof obj[key] ==="object"){
                 	console.log('obj hasOwnProperty');
                     objClone[key] = deepClone(obj[key]);
@@ -528,7 +528,6 @@ $("#log").click(function(){
 		console.log(a);
 		console.log(flag);
 	}
-
 	// testTwo();
 	function testThree(){
 		let apple = {
@@ -552,8 +551,171 @@ $("#log").click(function(){
 		proxyDemo.price = 88;
 		console.log(proxyDemo.price);
 	}
-	testThree();
+	// testThree();
+	function testFour(){
+		let a = 'apple, pig, bag';
+		let f0 = a.includes('apple');//includes() 判断对应的字符串 返回布尔值
+		let f1 = a.startsWith('ap');//startsWith() 判断原字符串的头部是否存在对应的字符串
+		let f2 = a.endsWith('ag');//endsWith() 判断原字符串的尾部是否存在对应的字符串
+		console.log(f0);
+		console.log(f1);
+		console.log(f2);
+		let r = a.repeat(3);//repeat(n)  返回n次字符串;
+		console.log(r);
+		let b = 'abcd';
+		let p1 = b.padStart(8,'qwe');//padStart() 从头部补全字符串 第一个参数为位数 第二个参数为用来补全的字符串
+		let p2 = b.padEnd(9, 'xyz');//padEnd() 从尾部补全字符串
+		console.log(p1);
+		console.log(p2);
+		// ` 模板字符串
+ 		let c = `    
+		hello  every one 
+		I am your best friend 
+		do you like me?
+		`;
+		let name = 'jack';
+		const country = 'China';
+		let d = `my name id ${name}, I am from ${country} `;
+		console.log(c);
+		console.log(d);
+		let arr1 = [1,55,'哈哈',34];
+		let obj1 = {
+			apple:"adf",
+			beef: "ox",
+			bird: 123
+		}
+		let method1 = function(){
+			let beef = 'chick';
+			console.log('aaaaaaa');
+			console.log(beef);
+		}
+		console.log(arr1);
+		console.log(obj1.__proto__);
+		console.log(method1.prototype);
+	}
+	// testFour();
+	function testFive(){
+		let a = [
+			{
+				"wpjhmxid" : 111
+			},
+			{
+				"wpjhmxid" : 222
+			},
+			{
+				"wpjhmxid" : 333
+			}
+		];
+		let b = [];
+		for(var i = 0; i < 9; i++){
+			b.push({"wpjhmxid": i*100 });
+			var obj = {"wpjhmxid": i*100 };
+			// b.push(obj);
+		} 
+		console.log(b);
+		console.log(a);
+		var myJSON = JSON.stringify(a);
+		console.log(myJSON);
+		/*Math().cbrt 计算立方根*/
+		let n0 = 27;
+		n0 = Math.cbrt(n0);
+		console.log('n0>>>>>' + n0);//n0 == 3
+		// Math.hypot 计算平方和的平方根
+		let n1 = 3;
+		let n2 = 4;
+		let sum0;
+		sum0 = Math.hypot(n1, n2);
+		console.log('sum0>>>>>>>' + sum0);//sum0 == 5
+		// Math.sign 判断数字的符号
+		let n3 = 6;
+		let n4 = -8;
+		console.log(Math.sign(n3));//1
+		console.log(Math.sign(n4));//-1
+		//Number.isInteger(); 判断是否为整数 
+		let n5 = 32.34;
+		let n6 = 23.0;
+		console.log('整数判断');
+		console.log(Number.isInteger(n5));//false
+		console.log(Number.isInteger(n6));//true
+		//Math.trunc(); 去除小数部分，返回整数部门
+		let n7 = 78.34;
+		console.log('去除小数');
+		console.log(Math.trunc(n7));//78
+	}
+	// testFive();
+	function $testSix(){
+		let tdcl = $("td.cl");
+		let count = 5;
+		let n2 = 88;
+		let n3 = 11;
+		console.log('testSix');
+		console.log(tdcl);
+		console.log(Math.fround(1.337));
+		// 给函数设置默认参数 
+		function log(x, y = "best", z = "friend"){ //给y,z 设置默认参数
+			console.log(x, y, z); 
+		}
+		log("Amy");// Amy best friend
+		function sumOne(n1 = count + 2){
+			console.log(n1);
+		}
+		count += 3;	
+		sumOne();
+		//设置不定参数  ...变量名 
+		function sumTwo(...args){ //args为不定参数 是一个数组
+			let sum1 = 0;
+			for(var val of args){
+				sum1 += val;
+			}
+			console.log(sum1);
+			return sum1;
 
+		}
+		sumTwo(11, 22, 33, 44);
+		//箭头参数
+		var f = function(j){
+			console.log(j);
+			return j;
+		}
+		var funR = j => j;
+		console.log('lalalalalalalal');
+		console.log(funR('gogogo'));
+		var funS = (n, m) =>  n2 + n3;
+		console.log(funS());
+		let funSS = (x, y) => { y = x + n2; return y };
+		console.log(funSS(4));
+		const isEven = n => n % 2 === 0;
+		console.log(isEven(8));
+		[1,2,3].map(function (x) {
+		  return x * x;
+		});
+		[1,2,3].map( x => x * x );
+		[2,3,4].map(function(){
+			x * x;
+		});
+
+		
+	}
+	$testSix();
+	
+	function testSeven(){
+	 	//解构赋值
+	 	let obj1 = {
+	 		name: 'apple',
+	 		price: 8,
+	 		color: 'red', 
+	 		size: 20
+	 	};
+	 	let {name:x, size:y} = obj1;
+	 	console.log(x);
+	 	console.log(obj1["name"]);
+	 	console.log(y);
+	}
+	// testSeven();
+	let testEight = function(){
+
+	} 
+	 
 });
 //调试结束
 
@@ -614,7 +776,7 @@ function selectBox2(){
 			$(this).next(".sBox-li-ul").fadeToggle();
 		});
 }
-selectBox2();
+// selectBox2();
 function NumberSelect( obj ){
             var e=obj.value;
             if(String(e).indexOf('.')>-1){ //判断有没有输入小数点
@@ -670,4 +832,13 @@ function slCheck(){
 			}
 			});
 	});
+}
+function boxFourClick(){
+	console.log("boxFourClick");
+	var selectList = document.getElementById('boxFour-selectFruit');
+	console.log(selectList.options[1]);
+	// selectList.length = 0;//清空select
+	selectList.add(new Option('test', 123, null, true)); //给select新增option 第四个参数设置true 为选中
+	// selectList.options.remove(2); //删除select的option
+	selectList.options[1] = new Option('桃子', 4); //修改select索引为1的option
 }
