@@ -9,7 +9,10 @@
 	<meta content="favicon.ico" itemprop="image">
 	<meta name="referrer" content="always">
 	<script src="javascript/jquery-3.3.1.js"></script>
+	<script src="./layui/layui.js"></script>
+	<script src="./layui/layui.all.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/2.css">
+	<!-- <link rel="stylesheet" href="css/layui.css"> -->
 	<style>
 	body{
 		/*margin: 0 auto;*/
@@ -119,10 +122,11 @@
 
 	<button id="log">CONSOLE</button><br>
 	
-	<input type="text" id="logBtn" value="666" data="lala" style="width: 85px;"><br>
+	<input type="text" id="logBtn" value="666" data="lala" style="width: 85px;" data-log="log"><br>
 	<input type="text" value="" class="textNum" name="textNumber" onkeyup="NumberSelect(this);"><br>
 	<input type="hidden" id="cglist" value="[{a=1,b=2,c=3},{X=111,Y=222,Z=333}]">
 	<input style="width: 100px;" id="mobile" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" maxlength=11></input> <br>
+	<a href="#" id="alink">超链接</a>
 
 <!--[if lt IE 7]>       <p>小于IE7</p> <![endif]-->
 <!--[if IE 7]>       <p>IE7</p> <![endif]-->
@@ -752,7 +756,10 @@ document.querySelector('.voice').onmousedown = function () {
 		</ul>
 		
 	</div>
-
+<!-- 开始Layui -->
+<div>
+	
+</div>
 
 <footer>
 	<p>①</p>
@@ -762,6 +769,8 @@ document.querySelector('.voice').onmousedown = function () {
 	<p>⑤</p>
 </footer>
 </body>
-	<script src="javascript/2.js"></script>
+<script src="javascript/lodash.js"></script>
+<script src="javascript/2.js"></script>
+
 	
 </html>

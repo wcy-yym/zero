@@ -1,8 +1,8 @@
 /**
  * 
- * @authors Your Name (you@example.org)
+ * @authors YYM
  * @date    2019-03-08 11:53:10
- * @version $Id$
+ * @version $v0.1$
  */
 
 var vm = new Vue({
@@ -11,7 +11,6 @@ var vm = new Vue({
 			msg: 'hello',
 			hello:'<b>Hello Every One</b>',
 			numIn: "123",
- 			
 		}
 	})
 
@@ -126,11 +125,11 @@ var vm = new Vue({
 		}
 	})
 	
-
-	//注册一个tagName叫myBox的组件
+	//注册一个tagName叫myBox的组件 template为HTML模板
 	Vue.component('myBox',{
 		template: '<h1>my-box!</h1>'
 	})
+
 	Vue.component('runoob', {
   		template: '<div><img src="images/flower/8.png" height="100px" width="100px" alt=""/></div>'
 	})
@@ -166,6 +165,56 @@ var vm = new Vue({
 		}
 	})
 
+	//注册tagName为sumbox的组件
+	Vue.component('sumbox', {
+		// template: ' <div>\
+		// <table> \
+  //   	<tr>\
+  //   		<td><input type="text" class="inputNum" value="" placeholder="common!"></td>\
+  //   		<td><input type="text" class="inputNum"></td>\
+  //   		<td><input type="text" class="inputNum"></td>\
+  //   		<td class="sum">sum</td>\
+  //   	</tr>\
+  //   	<tr>\
+  //   		<td><input type="text" class="inputNum"></td>\
+  //   		<td><input type="text" class="inputNum"></td>\
+  //   		<td><input type="text" class="inputNum"></td>\
+  //   		<td class="sum">sum</td>\
+  //   	</tr>\
+  //   </table>\
+  //   <button>sum</button>\
+  //   </div>',
+  		template: "#temSumbox",
+    	data: function(){
+    		return{
+    			number: {
+    				a : '',
+	    			b : '',
+	    			c : ''
+    			}
+    			
+    		}
+    	},
+    	methods:{
+    		sumNum:function(){
+    			console.log('sumNum');
+    			let a = document.getElementById('temSumTable');
+    			let sum = 0;
+    			let numLong = this.number.length;
+
+    			for (var i in this.number) {
+    				console.log(parseInt(this.number[i]));
+    				if (isNaN(parseInt(this.number[i])) == false) {
+    				sum += parseInt(this.number[i]);
+    				// statement
+    				}
+    			}
+    			
+    			console.log(this.number['a']);
+    			return sum
+    		}
+    	} 
+	})
 // 创建根实例
 	var day6 = new Vue({
 		el:"#app6",
@@ -205,5 +254,4 @@ var vm = new Vue({
 			picNum: 2
 		}
 	})
-
 

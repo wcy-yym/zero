@@ -1,0 +1,19 @@
+{
+  "title": "my girls",
+  "id": 123,
+  "start": 0,
+  "data": [
+    {
+      "alt": "1",
+      "pid": 1, //图片id
+      "src": "../images/flower/1.png", //原图地址
+      "thumb": ""
+    },
+    {
+      "alt": "2",
+      "pid": 2, //图片id
+      "src": "../images/flower/2.png", //原图地址
+      "thumb": ""
+    }
+  ]
+}

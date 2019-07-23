@@ -167,7 +167,30 @@
 			<button id="cPic" >change</button>
 			<input value="">
 		</div>
+		<sumbox></sumbox>
 	</div>
+	<div id="app7">
+		
+		
+	</div>
+	<template id="temSumbox">
+			<div>
+				<table id="temSumTable">
+			    	<tr>
+			    		<td><input type="number" class="inputNum" :value="number.a" v-model="number.a" placeholder="come on!">{{number.a}}</td>
+			    		<td><input type="text" class="inputNum" :value="number.b" v-model="number.b">{{number.b}}</td>
+			    		<td><input type="text" class="inputNum" :value="number.c" v-model="number.c">{{number.c}}</td>
+			    		<td class="sum">ALL:{{sumNum()}}</td>
+			    	</tr>
+			    	<tr>
+			    		<td><input type="text" class="inputNum" ></td>
+			    		<td><input type="text" class="inputNum"></td>
+			    		<td><input type="text" class="inputNum"></td>
+			    		<td>ALL:</td>
+			    	</tr>
+			    </table>
+			</div>
+		</template>	
 
 </div>
 </body>

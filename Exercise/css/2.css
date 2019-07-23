@@ -110,3 +110,7 @@
 .sBox-li-ul{
 	display: none;
 }
+#logBtn{
+	color: #FF0000;
+	*color: #66CCFF;
+}

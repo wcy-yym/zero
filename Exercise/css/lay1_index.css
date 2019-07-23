@@ -1,0 +1,65 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors YYM
+ * @date    2019-07-19 17:44:28
+ * @version $Id$
+ */
+.layui-container{
+	/*padding:0;*/
+}
+/*头部*/
+.top-nav{
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	width: 100%;
+	height: 60px;
+}
+.top-logo{
+	position: absolute;
+	top: 4px;
+	left: 25px;
+}
+#top-img{
+	background: url("../images/flower/2.png") repeat-x;
+	background-size: cover;
+	height: 240px;
+}
+.layui-nav{
+	padding:0;
+}
+.nav-main{
+	margin-left: 100px;
+	background: none;
+}
+.bg, .top-nav{
+	background: #a5329b;
+}
+.bg .layui-this:after,.bg .layui-nav-bar{
+	background: #66ccff;
+}
+.nav-login{
+	position: absolute;
+	top:0;
+	right: 15px;
+}
+.nav-login .layui-nav-bar{
+	display: none;
+}
+.nav-login .layui-nav-item a {
+	padding:0 10px;
+}
+.icon-icon_geren{
+	font-size: 32px;
+}
+.area-one{
+	height: 600px;
+}
+.area-one .layui-tab .layui-tab-title li{
+	background: #ea54dd;
+}
+.area-one .layui-tab .layui-tab-title .layui-this{
+	background: #66ccff;
+}

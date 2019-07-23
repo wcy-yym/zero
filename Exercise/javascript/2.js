@@ -408,7 +408,7 @@ $("#log").click(function(){
 		console.log('>>>>>>>>>>');
 		console.log(newReg1);
 	}
-	regTest();
+	// regTest();
 	//正则判断6~10位 英文和数字
 	function zzzz(){
 		var reg = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,10}$/
@@ -672,7 +672,7 @@ $("#log").click(function(){
 
 		}
 		sumTwo(11, 22, 33, 44);
-		//箭头参数
+		//箭头函数
 		var f = function(j){
 			console.log(j);
 			return j;
@@ -689,14 +689,9 @@ $("#log").click(function(){
 		[1,2,3].map(function (x) {
 		  return x * x;
 		});
-		[1,2,3].map( x => x * x );
-		[2,3,4].map(function(){
-			x * x;
-		});
-
 		
 	}
-	$testSix();
+	// $testSix();
 	
 	function testSeven(){
 	 	//解构赋值
@@ -713,10 +708,141 @@ $("#log").click(function(){
 	}
 	// testSeven();
 	let testEight = function(){
+		function Fruit(name, size){
+			this.name = name;
+			this.size = size;
+		}
+		
+		let apple = new Fruit('apple', 10);
+		let melon = new Fruit('melon', 20);
+		let obj1 = {name:'test', aaa: 23};
+		let arr1 = [1,2,3];
+		let fun1 = function(){
+			return 100
+		}
+		console.log('>>>>>>>>>>>>>>>>>>>>>');
+		console.log(typeof(apple));
+		console.log(apple);
+		console.log(obj1);
+		console.log(obj1.prototype);
+		console.log(fun1);
+		console.log(fun1.prototype);
+		console.log(apple);
+		console.log(apple.__proto__);
+		console.log(Fruit);
+		console.log(Fruit.prototype);
+		let obj2 = new Object();
+		console.log(obj2.constructor);
+		function Person2(){
+			this.age = 29;
+		}
+		var p2 = new Person2();
+		console.log(p2);
+	}
+	// testEight();
+	let testNine = function(){
+		function Point(x, y) {
+		  this.x = x;
+		  this.y = y;
+		}
 
-	} 
-	 
+		Point.prototype.toString = function () {
+		  return '(' + this.x + ', ' + this.y + ')';
+		};
+		var p = new Point(1, 2);
+		console.log('ppppppppppppppp');
+		console.log(p);
+
+		class PointClass {
+		  constructor(x, y) {
+		    this.x = x;
+		    this.y = y;
+		  }
+
+		  toString() {
+		    return '(' + this.x + ', ' + this.y + ')';
+		  }
+		}
+
+		let point1 = new PointClass(3,4);
+		console.log(point1);
+
+		//定义一个Fruit类
+		class Fruit {
+			constructor(name, color, price, number, ratio) {
+				this.name = name;
+				this.color = color;
+				this.price = price;
+				this.number = number;
+				this.type = 'fruit';
+				
+			}
+			sub() {
+				return this.price * this.number
+			}
+		}
+		//定义一个继承Fruit父类的Melon子类
+		class Melon extends Fruit{
+			constructor(size){
+				super('watermelon', 'green', 60, 30);
+				
+				this.size = size;
+			}
+			sub2(){
+				return super.sub() + 1
+			}
+		}
+		let apple = new Fruit('apple', 'red', 100, 20);
+		let pear = new Fruit('pear', 'yellow', 30, 40);
+		let peach = new Fruit('peach', 'pink', 300, 60);
+		let watermelon = new Melon(70);
+
+		apple.discount = function(ratio){
+			return this.price * this.number * 0.1 * ratio 
+		}
+		console.log(apple);
+		console.log(apple.sub());
+		console.log(apple.discount(8));
+		console.log(pear);
+		console.log(peach);
+		console.log('0000000000');
+		console.log(apple.__proto__);
+		console.log(apple.__proto__ == Fruit.prototype);
+		console.log(watermelon.sub2());		
+	}
+	// testNine();
+	let testTen = function(){
+		let arr1 = [2,1,0,2,2,3,4,3,5];
+		let arr2 = [2,3,2,2,4,3,2,6];
+		let arr3 = [2,4,6,7,8,10,11,13,16];
+		let result1 = arr2.splice(2,1);
+		//去掉奇数
+		function fun1(n){
+			return n%2 == 0
+		}
+		//去掉重复的元素
+		let fun2 = (n, index, arr) => {
+			console.log(arr.indexOf(n));
+			return arr.indexOf(n) === index;
+		}
+		let result2 = arr3.filter(fun1);
+		let result3 = arr2.filter(fun2);
+		console.log(result2);
+		console.log(result3);
+
+		$('#logBtn').data('log', 'hahaha');
+		console.log($('#logBtn').data());
+		console.log($('#logBtn').data('log'));
+
+
+	}
+	testTen();
+	let testEleven = function(){
+
+	}
+
 });
+
 //调试结束
 
 	function moveoverOne(){
@@ -725,7 +851,7 @@ $("#log").click(function(){
 			console.log(event);
 		});
 	}
-	moveoverOne();
+	// moveoverOne();
 	function stringChange(){
 		var s = ['1','3','5'];
 		var n = s.map(Number);
@@ -778,6 +904,7 @@ function selectBox2(){
 }
 // selectBox2();
 function NumberSelect( obj ){
+			console.log(obj.value);
             var e=obj.value;
             if(String(e).indexOf('.')>-1){ //判断有没有输入小数点
             }else{
