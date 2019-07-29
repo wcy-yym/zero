@@ -65,15 +65,15 @@ export default {
 			layer.msg('test')
 			var con = document.getElementById('content')
 			// con.style.background = '#66ccff'
-			var n = 0;
+			var n = 0
 			var timer = setInterval(function () {
-				n++;
-				element.progress('demo', n * 10 + '%');
-				console.log(n);
+				n++
+				element.progress('demo', n * 10 + '%')
+				console.log(n)
 				if (n >= 10) {
-				clearInterval(timer);
+				clearInterval(timer)
 				}
-			}, 1000);
+			}, 1000)
 		})
 	}
   }

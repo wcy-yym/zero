@@ -1,10 +1,10 @@
 <template>
 	<div class="Carousel">
 		<div class="layui-container">
-			<div class="layui-row" style="text-align: center;">
-				<h1>Carousel</h1>
+			<div class="layui-row topTitle" style="text-align: center;">
+				<h1 @click="imgRandom()">Carousel</h1>
 			</div>
-			<div class="layui-row">
+			<!-- <div class="layui-row">
 				<div class="layui-carousel itemChange" id="itemChangeOne">
 					<div carousel-item>
 						<div><img src="../../static/images/flowers/1.png" alt="" class="itemChange-img"></div>
@@ -14,7 +14,7 @@
 						<div><img src="../../static/images/flowers/52.png" alt="" class="itemChange-img"></div>
 					</div>
 			</div>
-			</div>
+			</div> -->
 			<div class="layui-row">
 				<div class="layui-carousel itemChange" id="itemChangetwo">
 					<div carousel-item>
@@ -22,6 +22,7 @@
 						<div class="icTwo-imgBg" data-imgIndex="2"></div>
 						<div class="icTwo-imgBg" data-imgIndex="3"></div>
 						<div class="icTwo-imgBg" data-imgIndex="4"></div>
+						<div class="icTwo-imgBg" data-imgIndex="5"></div>
 					</div>
 			</div>
 			</div>
@@ -38,10 +39,10 @@
 		},
 		mounted () {
 			layui.use(['jquery', 'layer', 'element', 'carousel'], function () {
-				let $ = layui.$
-				let layer = layui.layer
-				let element = layui.element
-				let carousel = layui.carousel
+				var $ = layui.$
+				var layer = layui.layer
+				var element = layui.element
+				var carousel = layui.carousel
 				carousel.render({
 					elem: '#itemChangeOne',
 					width: '100%',
@@ -59,14 +60,36 @@
 					anim: 'default'
 				})
 			})
+			this.imgRandom()
 		},
 		computed: {
 		},
 		methods: {
+			imgRandom: function () {
+				let imgList = document.querySelectorAll('.icTwo-imgBg')
+				for (let i = 0; i < imgList.length; i++) {
+					let imgIndex = Math.floor(Math.random() * 50) + 1
+					imgList[i].style.backgroundImage = 'url("../../static/images/flowers/' + imgIndex + '.png")'
+					console.log(imgIndex)
+				}
+				console.log(imgList)
+				layer.msg('更换图片', {
+					shade: [0.3, 'rgb(33, 33, 33)'],
+					shadeClose: true,
+					anim: 5,
+					time: 1500
+				})
+			}
 		}
 	}
 </script>
 <style>
+	.topTitle{
+		margin: 5px 0;
+	}
+	.topTitle h1{
+		font-weight: bold;
+	}
 	.itemChange{
 		margin: 20px 0;
 	}
@@ -74,7 +97,8 @@
 		width: 100%;
 	}
 	.icTwo-imgBg{
-		background: url('../../static/images/flowers/28.png') no-repeat;
+		background: url('../../static/images/flowers/28.png');
 		background-size: cover;
+		background-repeat: no-repeat;
 	}
 </style>

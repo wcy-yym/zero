@@ -2,18 +2,21 @@
   <div id="app">
     <my-header></my-header>
     <myCarousel></myCarousel>
+    <myContent></myContent>
   </div>
 </template>
 
 <script>
 import myHeader from './components/Head'
 import myCarousel from './components/carousel'
+import myContent from './components/content'
 
 export default {
   name: 'app',
   components: {
     myHeader,
-    myCarousel
+    myCarousel,
+    myContent
   }
 }
 </script>
