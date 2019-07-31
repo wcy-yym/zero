@@ -3,13 +3,14 @@
     <my-header></my-header>
     <myCarousel></myCarousel>
     <myContent></myContent>
+    <router-view name='main'></router-view>
   </div>
 </template>
 
 <script>
 import myHeader from './components/Head'
-import myCarousel from './components/carousel'
-import myContent from './components/content'
+import myCarousel from './components/Carousel'
+import myContent from './components/Content'
 
 export default {
   name: 'app',
