@@ -2,19 +2,8 @@
 	<div class="Carousel">
 		<div class="layui-container">
 			<div class="layui-row topTitle" style="text-align: center;">
-				<h1 @click="imgRandom()">Carousel</h1>
+				<h1 @click="imgRandom()">{{Carousel}}</h1>
 			</div>
-			<!-- <div class="layui-row">
-				<div class="layui-carousel itemChange" id="itemChangeOne">
-					<div carousel-item>
-						<div><img src="../../static/images/flowers/1.png" alt="" class="itemChange-img"></div>
-						<div><img src="../../static/images/flowers/28.png" alt="" class="itemChange-img"></div>
-						<div><img src="../../static/images/flowers/7.png" alt="" class="itemChange-img"></div>
-						<div><img src="../../static/images/flowers/17.png" alt="" class="itemChange-img"></div>
-						<div><img src="../../static/images/flowers/52.png" alt="" class="itemChange-img"></div>
-					</div>
-			</div>
-			</div> -->
 			<div class="layui-row">
 				<div class="layui-carousel itemChange" id="itemChangetwo">
 					<div carousel-item>
@@ -32,9 +21,10 @@
 <script>
 	export default {
 		name: 'Carousel',
+		props: ['Carousel'],
 		data () {
 			return {
-				a: 1
+				num: 1
 			}
 		},
 		mounted () {
@@ -72,6 +62,23 @@
 					imgList[i].style.backgroundImage = 'url("../../static/images/flowers/' + imgIndex + '.png")'
 					console.log(imgIndex)
 				}
+				console.log(this.Carousel);
+				console.log(imgList)
+				layer.msg('更换图片', {
+					shade: [0.3, 'rgb(33, 33, 33)'],
+					shadeClose: true,
+					anim: 5,
+					time: 1500
+				})
+			},
+			gameBgRandom: function () {
+				let imgList = document.querySelectorAll('.icTwo-imgBg')
+				for (let i = 0; i < imgList.length; i++) {
+					let imgIndex = Math.floor(Math.random() * 11) + 1
+					imgList[i].style.backgroundImage = 'url("../../static/images/dota2/carousel/' + imgIndex + '.jpg")'
+					console.log(imgIndex)
+				}
+				console.log(this.Carousel);
 				console.log(imgList)
 				layer.msg('更换图片', {
 					shade: [0.3, 'rgb(33, 33, 33)'],

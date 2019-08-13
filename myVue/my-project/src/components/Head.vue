@@ -2,16 +2,22 @@
 	<div class="header">
 		<nav class="top-nav bg">
 			<div class="layui-container">
-				<a href="#" class="top-logo">
+				<a href="/" class="top-logo">
 						<img src="../../static/images/icon/moon.png" alt="Moon">
 					</a>
 				<ul class="layui-nav nav-main">
-					<li class="layui-nav-item layui-this"><a href="/">Home</a></li>
-					<li class="layui-nav-item "><a href="">Game</a></li>
-					<li class="layui-nav-item "><a href="">Animation</a></li>
-					<li class="layui-nav-item "><a href="">Music</a></li>
+					<li class="layui-nav-item layui-this">
+						<router-link :to="{name: 'root'}">Home</router-link>
+					</li>
+					<li class="layui-nav-item ">
+						<router-link :to="{name: 'myGame'}">Game</router-link>
+					</li>
+					<li class="layui-nav-item ">
+						<router-link :to="{name: 'myAnimation'}">Animation</router-link></li>
+					<li class="layui-nav-item "><a href="">Music</a>
+					</li>
 					<li class="layui-nav-item">
-					<a href="javascript:;">other</a>
+						<a href="javascript:;">other</a>
 					<dl class="layui-nav-child">
 						<dd><a href="">one</a></dd>
 						<dd><a href="">two</a></dd>

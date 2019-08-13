@@ -1,23 +1,18 @@
 <template>
   <div id="app">
     <my-header></my-header>
-    <myCarousel></myCarousel>
-    <myContent></myContent>
     <router-view name='main'></router-view>
   </div>
 </template>
 
 <script>
 import myHeader from './components/Head'
-import myCarousel from './components/Carousel'
 import myContent from './components/Content'
 
 export default {
   name: 'app',
   components: {
-    myHeader,
-    myCarousel,
-    myContent
+    myHeader
   }
 }
 </script>
